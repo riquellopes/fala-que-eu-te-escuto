@@ -6,6 +6,20 @@ from functools import wraps
 API_URL_ATT = "https://api.att.com"
 
 
+class SpeechToTextException(Exception):
+    pass
+
+
+def mimetype(types):
+    def decorator(function):
+        @wraps(function)
+        def validation(*args, **kwargs):
+            raise SpeechToTextException("We don't have support.")
+            function(*args, **kwargs)
+        return validation
+    return decorator
+
+
 def oauth(func):
     @wraps(func)
     def token(*args, **kwargs):
@@ -21,10 +35,6 @@ def oauth(func):
         kwargs['token'] = response.json()['access_token']
         return func(*args, **kwargs)
     return token
-
-
-class SpeechToTextException(Exception):
-    pass
 
 
 class SpeechToText(object):

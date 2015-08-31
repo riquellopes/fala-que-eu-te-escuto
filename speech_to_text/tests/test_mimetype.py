@@ -11,6 +11,6 @@ class TestMimetype(unittest.TestCase):
             Should exception if mimetype be block.
         """
         @mimetype(["wav", "amr"])
-        def mimetype(file):
+        def hello(file):
             pass
-        assert_raises(SpeechToTextException, mimetype, "california.mp3")
+        assert_raises(SpeechToTextException, hello, "california.mp3")
