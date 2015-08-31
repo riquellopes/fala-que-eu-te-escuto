@@ -53,4 +53,4 @@ if __name__ == "__main__":
         key=os.environ.get("ATT_APP_KEY"),
         secret=os.environ.get("ATT_APP_SECRET"))
 
-    print s.to_text(file="california.amr")
+    print s.to_text(file="test/california.amr")
