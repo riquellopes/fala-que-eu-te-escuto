@@ -2,3 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/riquellopes/fala-que-eu-te-escuto/badge.svg?branch=master&service=github)](https://coveralls.io/github/riquellopes/fala-que-eu-te-escuto?branch=master)
 Fala que eu te escuto
 ---------------------
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riquellopes/fala-que-eu-te-escuto/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
