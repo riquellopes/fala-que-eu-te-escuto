@@ -1,0 +1,20 @@
+{u'Recognition':
+    {u'Info':
+        {u'metrics':
+            {u'audioTime': 3.68000007,
+             u'audioBytes': 5888}},
+         u'Status': u'OK',
+         u'ResponseId': u'4922fd5a092c81fb63c96d7d2bb6ddfe',
+         u'NBest': [
+             {u'Confidence': 1,
+              u'ResultText': u'Crescent city california.',
+              u'LanguageId': u'en-US',
+              u'Grade': u'accept',
+              u'Hypothesis': u'crescent city california',
+              u'Words':
+                [u'Crescent', u'city', u'california.'],
+              u'WordScores': [1, 1, 1]
+             }
+        ]
+    }
+}

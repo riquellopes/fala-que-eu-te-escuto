@@ -1,0 +1,19 @@
+{u'Recognition':
+    {u'Info':
+        {u'metrics':
+            {u'audioTime': 3.18000007,
+             u'audioBytes': 50880}
+        },
+        u'Status': u'OK',
+        u'ResponseId': u'b0fdd891520e47d10b0b5a28d76872a3',
+        u'NBest': [
+            {u'Confidence': 1,
+             u'ResultText': u'Boston celtics.',
+             u'LanguageId': u'en-US',
+             u'Grade': u'accept',
+             u'Hypothesis': u'boston celtics',
+             u'Words': [u'Boston', u'celtics.'],
+             u'WordScores': [1, 1]}
+        ]
+    }
+}
