@@ -1,9 +1,14 @@
 # coding: utf-8
 # http://stackoverflow.com/questions/23039101/using-the-att-speech-to-text-api-with-python
 import requests
+import urllib
+import mimetypes
 from functools import wraps
 
 API_URL_ATT = "https://api.att.com"
+SPEECH_MIME_TYPE = (
+    "audio/x-wav",
+)
 
 
 class SpeechToTextException(Exception):
@@ -14,8 +19,15 @@ def mimetype(types):
     def decorator(function):
         @wraps(function)
         def validation(*args, **kwargs):
-            raise SpeechToTextException("We don't have support.")
-            function(*args, **kwargs)
+            path = kwargs.get("path", None)
+            url = urllib.pathname2url(path)
+            if mimetypes.guess_type(url)[0] not in SPEECH_MIME_TYPE:
+                raise SpeechToTextException("We don't have support.")
+            try:
+                kwargs['handle'] = open(path, 'rb')
+                return function(*args, **kwargs)
+            except:
+                raise SpeechToTextException("File not exist.")
         return validation
     return decorator
 
@@ -44,8 +56,8 @@ class SpeechToText(object):
         self.app_secret = secret
 
     @oauth
-    def to_text(self, token, file):
-        with open(file, 'rb') as audio:
+    def to_text(self, token, path, handle):
+        with open(path, 'rb') as audio:
             response = requests.post(
                 "{0}/speech/v3/speechToText".format(API_URL_ATT),
                 headers={
